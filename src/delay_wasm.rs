@@ -22,3 +22,5 @@ impl Future for Delay {
 		Pin::new(&mut Pin::into_inner(self).0).poll(cx)
 	}
 }
+
+unsafe impl Send for Delay {}
